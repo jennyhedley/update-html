@@ -12,8 +12,11 @@
     <style></style>
   </head>
   <body>
-    <h1>Updating HTML Content</h1>
+    <h1>I am a heading, what are you?</h1>
     <p id="paragraph-1">
+      This is a paragraph.
+    </p>
+    <p id="paragraph-2">
       This is a paragraph.
     </p>
     <button id="button-1">
@@ -21,15 +24,20 @@
     </button>
     <!-- script -->
     <script>
-      const lines = "this is how, or is this how, or maybe how, and any how".split(",");
+      const lines = "If I were to open with this sentence, I'm nervous to begin, First on page, My grand entrance".split(",");
+        const linesTwo = "I'm not the first, I'm following the first, Second on page but not second best".split(",");
+      const linesThree = "Starting anew, I'm following a line break, New idea goes here".split(",");
       const button = document.getElementById("button-1");
 
       function getRandomFromList(list) {
         return list[Math.floor(Math.random() * list.length)];
       }
+       <!-- gets and element by ID  -->
       function changeText() {
-        paragraph = document.getElementById("paragraph-1");
-        paragraph.innerText = getRandomFromList(lines);
+        const paragraph = document.getElementById("paragraph-1");
+        const paragraphTwo = document.getElementById("paragraph-2");
+        paragraph.innerText = getRandomFromList(lines) + ". " + getRandomFromList(linesTwo) + ".";
+        paragraphTwo.innerText = getRandomFromList(linesThree) + ".";
       }
       button.addEventListener("click", changeText);
     </script>
